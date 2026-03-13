@@ -1,0 +1,20 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcloud": "https://cloud.google.com/iam/docs/reference/rest/v1/",
+    "ServiceAccount": "gcloud:projects.serviceAccounts",
+    "Role": "gcloud:roles",
+    "ServiceAccountKey": "gcloud:projects.serviceAccounts.keys",
+    "name": "https://schema.org/name",
+    "displayName": "https://schema.org/name",
+    "description": "https://schema.org/description",
+    "email": "https://schema.org/email",
+    "projectId": "https://schema.org/identifier",
+    "uniqueId": "https://schema.org/identifier",
+    "disabled": "https://schema.org/terminated",
+    "title": "https://schema.org/roleName",
+    "includedPermissions": "https://schema.org/hasDigitalDocumentPermission",
+    "validAfterTime": "https://schema.org/validFrom",
+    "validBeforeTime": "https://schema.org/validThrough"
+  }
+}

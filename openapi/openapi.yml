@@ -1,0 +1,450 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud IAM API
+  description: >-
+    The Cloud IAM API enables management of identity and access control
+    policies, service accounts, roles, and permissions for Google Cloud
+    resources.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/iam
+servers:
+  - url: https://iam.googleapis.com/v1
+    description: Google Cloud IAM Production
+paths:
+  /projects/{projectId}/serviceAccounts:
+    get:
+      operationId: listServiceAccounts
+      summary: List service accounts
+      description: Lists every service account in a project.
+      tags:
+        - Service Accounts
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accounts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ServiceAccount'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: createServiceAccount
+      summary: Create a service account
+      description: Creates a new service account in a project.
+      tags:
+        - Service Accounts
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountId:
+                  type: string
+                serviceAccount:
+                  $ref: '#/components/schemas/ServiceAccount'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceAccount'
+  /projects/{projectId}/serviceAccounts/{serviceAccountEmail}:
+    get:
+      operationId: getServiceAccount
+      summary: Get a service account
+      description: Retrieves a specific service account.
+      tags:
+        - Service Accounts
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceAccountEmail
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceAccount'
+    patch:
+      operationId: patchServiceAccount
+      summary: Update a service account
+      description: Updates a service account.
+      tags:
+        - Service Accounts
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceAccountEmail
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceAccount'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceAccount'
+    delete:
+      operationId: deleteServiceAccount
+      summary: Delete a service account
+      description: Deletes a service account.
+      tags:
+        - Service Accounts
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceAccountEmail
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /projects/{projectId}/serviceAccounts/{serviceAccountEmail}/keys:
+    get:
+      operationId: listServiceAccountKeys
+      summary: List service account keys
+      description: Lists every key for a service account.
+      tags:
+        - Service Account Keys
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceAccountEmail
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  keys:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ServiceAccountKey'
+    post:
+      operationId: createServiceAccountKey
+      summary: Create a service account key
+      description: Creates a new key for a service account.
+      tags:
+        - Service Account Keys
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceAccountEmail
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                privateKeyType:
+                  type: string
+                  enum:
+                    - TYPE_UNSPECIFIED
+                    - TYPE_PKCS12_FILE
+                    - TYPE_GOOGLE_CREDENTIALS_FILE
+                keyAlgorithm:
+                  type: string
+                  enum:
+                    - KEY_ALG_UNSPECIFIED
+                    - KEY_ALG_RSA_1024
+                    - KEY_ALG_RSA_2048
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceAccountKey'
+  /roles:
+    get:
+      operationId: listRoles
+      summary: List roles
+      description: Lists predefined roles.
+      tags:
+        - Roles
+      parameters:
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roles:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Role'
+                  nextPageToken:
+                    type: string
+  /projects/{projectId}/roles:
+    get:
+      operationId: listProjectRoles
+      summary: List project roles
+      description: Lists custom roles in a project.
+      tags:
+        - Roles
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roles:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Role'
+    post:
+      operationId: createProjectRole
+      summary: Create a custom role
+      description: Creates a new custom role in a project.
+      tags:
+        - Roles
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                roleId:
+                  type: string
+                role:
+                  $ref: '#/components/schemas/Role'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+  /permissions:queryTestablePermissions:
+    post:
+      operationId: queryTestablePermissions
+      summary: Query testable permissions
+      description: Lists permissions that can be tested on a resource.
+      tags:
+        - Permissions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fullResourceName:
+                  type: string
+                pageSize:
+                  type: integer
+                pageToken:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  permissions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        stage:
+                          type: string
+components:
+  schemas:
+    ServiceAccount:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the service account.
+        projectId:
+          type: string
+          description: ID of the project that owns the service account.
+        uniqueId:
+          type: string
+          description: Unique numeric ID of the service account.
+        email:
+          type: string
+          format: email
+          description: Email address of the service account.
+        displayName:
+          type: string
+          description: Human-readable name for the service account.
+        description:
+          type: string
+          description: Description of the service account.
+        disabled:
+          type: boolean
+          description: Whether the service account is disabled.
+        etag:
+          type: string
+          description: Entity tag for optimistic concurrency control.
+    ServiceAccountKey:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the key.
+        privateKeyType:
+          type: string
+          description: Type of the private key data.
+        keyAlgorithm:
+          type: string
+          description: Algorithm and size of the key.
+        privateKeyData:
+          type: string
+          description: Private key data (base64-encoded).
+        validAfterTime:
+          type: string
+          format: date-time
+          description: Timestamp after which the key is valid.
+        validBeforeTime:
+          type: string
+          format: date-time
+          description: Timestamp before which the key is valid.
+        keyOrigin:
+          type: string
+          description: Origin of the key.
+        keyType:
+          type: string
+          description: Type of the key.
+    Role:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the role.
+        title:
+          type: string
+          description: Human-readable title of the role.
+        description:
+          type: string
+          description: Description of the role.
+        includedPermissions:
+          type: array
+          items:
+            type: string
+          description: Permissions included in the role.
+        stage:
+          type: string
+          enum:
+            - ALPHA
+            - BETA
+            - GA
+            - DEPRECATED
+          description: Launch stage of the role.
+        deleted:
+          type: boolean
+          description: Whether the role has been deleted.
+        etag:
+          type: string
+          description: Entity tag for optimistic concurrency control.
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/iam: Manage IAM resources
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
