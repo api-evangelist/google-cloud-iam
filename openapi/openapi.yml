@@ -16,7 +16,7 @@ paths:
   /projects/{projectId}/serviceAccounts:
     get:
       operationId: listServiceAccounts
-      summary: List service accounts
+      summary: Google Cloud IAM List service accounts
       description: Lists every service account in a project.
       tags:
         - Service Accounts
@@ -50,7 +50,7 @@ paths:
                     type: string
     post:
       operationId: createServiceAccount
-      summary: Create a service account
+      summary: Google Cloud IAM Create a service account
       description: Creates a new service account in a project.
       tags:
         - Service Accounts
@@ -81,7 +81,7 @@ paths:
   /projects/{projectId}/serviceAccounts/{serviceAccountEmail}:
     get:
       operationId: getServiceAccount
-      summary: Get a service account
+      summary: Google Cloud IAM Get a service account
       description: Retrieves a specific service account.
       tags:
         - Service Accounts
@@ -105,7 +105,7 @@ paths:
                 $ref: '#/components/schemas/ServiceAccount'
     patch:
       operationId: patchServiceAccount
-      summary: Update a service account
+      summary: Google Cloud IAM Update a service account
       description: Updates a service account.
       tags:
         - Service Accounts
@@ -135,7 +135,7 @@ paths:
                 $ref: '#/components/schemas/ServiceAccount'
     delete:
       operationId: deleteServiceAccount
-      summary: Delete a service account
+      summary: Google Cloud IAM Delete a service account
       description: Deletes a service account.
       tags:
         - Service Accounts
@@ -156,7 +156,7 @@ paths:
   /projects/{projectId}/serviceAccounts/{serviceAccountEmail}/keys:
     get:
       operationId: listServiceAccountKeys
-      summary: List service account keys
+      summary: Google Cloud IAM List service account keys
       description: Lists every key for a service account.
       tags:
         - Service Account Keys
@@ -185,7 +185,7 @@ paths:
                       $ref: '#/components/schemas/ServiceAccountKey'
     post:
       operationId: createServiceAccountKey
-      summary: Create a service account key
+      summary: Google Cloud IAM Create a service account key
       description: Creates a new key for a service account.
       tags:
         - Service Account Keys
@@ -229,7 +229,7 @@ paths:
   /roles:
     get:
       operationId: listRoles
-      summary: List roles
+      summary: Google Cloud IAM List roles
       description: Lists predefined roles.
       tags:
         - Roles
@@ -259,7 +259,7 @@ paths:
   /projects/{projectId}/roles:
     get:
       operationId: listProjectRoles
-      summary: List project roles
+      summary: Google Cloud IAM List project roles
       description: Lists custom roles in a project.
       tags:
         - Roles
@@ -283,7 +283,7 @@ paths:
                       $ref: '#/components/schemas/Role'
     post:
       operationId: createProjectRole
-      summary: Create a custom role
+      summary: Google Cloud IAM Create a custom role
       description: Creates a new custom role in a project.
       tags:
         - Roles
@@ -314,7 +314,7 @@ paths:
   /permissions:queryTestablePermissions:
     post:
       operationId: queryTestablePermissions
-      summary: Query testable permissions
+      summary: Google Cloud IAM Query testable permissions
       description: Lists permissions that can be tested on a resource.
       tags:
         - Permissions
