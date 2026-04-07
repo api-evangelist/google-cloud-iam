@@ -448,3 +448,8 @@ components:
           scopes:
             https://www.googleapis.com/auth/iam: Manage IAM resources
             https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
+tags:
+  - name: Permissions
+  - name: Roles
+  - name: Service Account Keys
+  - name: Service Accounts

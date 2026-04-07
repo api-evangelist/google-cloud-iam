@@ -12,12 +12,12 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
+  - Access Management
   - Google Cloud
   - IAM
   - Identity
-  - Access Management
-  - Security
   - Permissions
+  - Security
 apis:
   - name: Google Cloud IAM API
     description: >-
@@ -28,9 +28,9 @@ apis:
     baseURL: https://iam.googleapis.com
     tags:
       - IAM
+      - Permissions
       - Roles
       - Service Accounts
-      - Permissions
     properties:
       - type: Documentation
         url: https://cloud.google.com/iam/docs/reference/rest
