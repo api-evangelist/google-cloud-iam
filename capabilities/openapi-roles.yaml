@@ -1,0 +1,165 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud IAM API — Roles
+  description: 'Google Cloud IAM API — Roles. 3 operations. Lead operation: Google Cloud IAM List project roles. Self-contained
+    Naftiko capability covering one Google Cloud Iam business surface.'
+  tags:
+  - Google Cloud Iam
+  - Roles
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_IAM_API_KEY: GOOGLE_CLOUD_IAM_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-roles
+    baseUri: https://iam.googleapis.com/v1
+    description: Google Cloud IAM API — Roles business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-roles
+      path: /projects/{projectId}/roles
+      operations:
+      - name: listprojectroles
+        method: GET
+        description: Google Cloud IAM List project roles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+      - name: createprojectrole
+        method: POST
+        description: Google Cloud IAM Create a custom role
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: roles
+      path: /roles
+      operations:
+      - name: listroles
+        method: GET
+        description: Google Cloud IAM List roles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_IAM_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-roles-rest
+    port: 8080
+    description: REST adapter for Google Cloud IAM API — Roles. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/roles
+      name: projects-projectid-roles
+      description: REST surface for projects-projectId-roles.
+      operations:
+      - method: GET
+        name: listprojectroles
+        description: Google Cloud IAM List project roles
+        call: openapi-roles.listprojectroles
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createprojectrole
+        description: Google Cloud IAM Create a custom role
+        call: openapi-roles.createprojectrole
+        with:
+          projectId: rest.projectId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/roles
+      name: roles
+      description: REST surface for roles.
+      operations:
+      - method: GET
+        name: listroles
+        description: Google Cloud IAM List roles
+        call: openapi-roles.listroles
+        with:
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-roles-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud IAM API — Roles. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: google-cloud-iam-list-project
+      description: Google Cloud IAM List project roles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-roles.listprojectroles
+      with:
+        projectId: tools.projectId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-iam-create-custom
+      description: Google Cloud IAM Create a custom role
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-roles.createprojectrole
+      with:
+        projectId: tools.projectId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-iam-list-roles
+      description: Google Cloud IAM List roles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-roles.listroles
+      with:
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
