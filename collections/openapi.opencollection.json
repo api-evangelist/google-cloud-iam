@@ -1,0 +1,293 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud IAM API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Service Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud IAM List service accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iam.googleapis.com/v1/projects/:projectId/serviceAccounts",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists every service account in a project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud IAM Create a service account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://iam.googleapis.com/v1/projects/:projectId/serviceAccounts",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new service account in a project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud IAM Get a service account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iam.googleapis.com/v1/projects/:projectId/serviceAccounts/:serviceAccountEmail",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceAccountEmail",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific service account."
+        },
+        {
+          "info": {
+            "name": "Google Cloud IAM Update a service account",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://iam.googleapis.com/v1/projects/:projectId/serviceAccounts/:serviceAccountEmail",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceAccountEmail",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a service account."
+        },
+        {
+          "info": {
+            "name": "Google Cloud IAM Delete a service account",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://iam.googleapis.com/v1/projects/:projectId/serviceAccounts/:serviceAccountEmail",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceAccountEmail",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a service account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Service Account Keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud IAM List service account keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iam.googleapis.com/v1/projects/:projectId/serviceAccounts/:serviceAccountEmail/keys",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceAccountEmail",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists every key for a service account."
+        },
+        {
+          "info": {
+            "name": "Google Cloud IAM Create a service account key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://iam.googleapis.com/v1/projects/:projectId/serviceAccounts/:serviceAccountEmail/keys",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceAccountEmail",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new key for a service account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Roles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud IAM List roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iam.googleapis.com/v1/roles",
+            "params": [
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists predefined roles."
+        },
+        {
+          "info": {
+            "name": "Google Cloud IAM List project roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iam.googleapis.com/v1/projects/:projectId/roles",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists custom roles in a project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud IAM Create a custom role",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://iam.googleapis.com/v1/projects/:projectId/roles",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new custom role in a project."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Permissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud IAM Query testable permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://iam.googleapis.com/v1/permissions:queryTestablePermissions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Lists permissions that can be tested on a resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

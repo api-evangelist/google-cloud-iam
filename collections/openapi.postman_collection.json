@@ -1,0 +1,1232 @@
+{
+  "item": [
+    {
+      "id": "670ec90c-3306-4d8a-bef5-c1187f8ff415",
+      "name": "Permissions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "43b6207c-2b53-4e13-a90e-65a93fa40eeb",
+          "name": "Google Cloud IAM Query testable permissions",
+          "request": {
+            "name": "Google Cloud IAM Query testable permissions",
+            "description": {
+              "content": "Lists permissions that can be tested on a resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "permissions:queryTestablePermissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullResourceName\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "188c9c9f-b5ef-4e9e-a915-c90ef9d9f2e6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "permissions:queryTestablePermissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fullResourceName\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"permissions\": [\n    {\n      \"name\": \"string\",\n      \"stage\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"stage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bd646140-3cf4-4e97-9814-ebd8083f737f",
+      "name": "Roles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fa24822b-2140-4452-ba17-bde89ce79ba6",
+          "name": "Google Cloud IAM List roles",
+          "request": {
+            "name": "Google Cloud IAM List roles",
+            "description": {
+              "content": "Lists predefined roles.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "roles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6a7ff4b0-ed97-4b9e-a7c3-dd6c92636cfc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"roles\": [\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"includedPermissions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"stage\": \"GA\",\n      \"deleted\": false,\n      \"etag\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"includedPermissions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"stage\": \"GA\",\n      \"deleted\": true,\n      \"etag\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2cdf4907-c586-42b9-a08f-a691abf086b7",
+          "name": "Google Cloud IAM List project roles",
+          "request": {
+            "name": "Google Cloud IAM List project roles",
+            "description": {
+              "content": "Lists custom roles in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "roles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e778306-f6fa-4808-8984-c20937ea65fd",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "roles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"roles\": [\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"includedPermissions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"stage\": \"GA\",\n      \"deleted\": false,\n      \"etag\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"includedPermissions\": [\n        \"string\",\n        \"string\"\n      ],\n      \"stage\": \"BETA\",\n      \"deleted\": false,\n      \"etag\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "773681b4-a5dc-4a15-b509-2e7a536dce53",
+          "name": "Google Cloud IAM Create a custom role",
+          "request": {
+            "name": "Google Cloud IAM Create a custom role",
+            "description": {
+              "content": "Creates a new custom role in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "roles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"roleId\": \"<string>\",\n  \"role\": {\n    \"name\": \"<string>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"includedPermissions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"stage\": \"<string>\",\n    \"deleted\": \"<boolean>\",\n    \"etag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "85997060-0eb3-491f-984b-04e536b83345",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "roles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<string>\",\n  \"role\": {\n    \"name\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"includedPermissions\": [\n      \"string\",\n      \"string\"\n    ],\n    \"stage\": \"ALPHA\",\n    \"deleted\": true,\n    \"etag\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"includedPermissions\": [\n    \"string\",\n    \"string\"\n  ],\n  \"stage\": \"DEPRECATED\",\n  \"deleted\": true,\n  \"etag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "54c95760-bd12-4f50-a707-dd97742478ba",
+      "name": "Service Account Keys",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eb1a1973-eaff-4b43-87f1-4737556bc229",
+          "name": "Google Cloud IAM List service account keys",
+          "request": {
+            "name": "Google Cloud IAM List service account keys",
+            "description": {
+              "content": "Lists every key for a service account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "serviceAccounts",
+                ":serviceAccountEmail",
+                "keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "serviceAccountEmail",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae6ceff8-c54e-4c27-af49-1753254e09d1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "serviceAccounts",
+                    ":serviceAccountEmail",
+                    "keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceAccountEmail",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"keys\": [\n    {\n      \"name\": \"string\",\n      \"privateKeyType\": \"string\",\n      \"keyAlgorithm\": \"string\",\n      \"privateKeyData\": \"string\",\n      \"validAfterTime\": \"1950-08-31T13:14:45.791Z\",\n      \"validBeforeTime\": \"2024-04-08T20:55:11.960Z\",\n      \"keyOrigin\": \"string\",\n      \"keyType\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"privateKeyType\": \"string\",\n      \"keyAlgorithm\": \"string\",\n      \"privateKeyData\": \"string\",\n      \"validAfterTime\": \"2003-08-15T20:47:38.305Z\",\n      \"validBeforeTime\": \"2019-09-24T18:34:04.535Z\",\n      \"keyOrigin\": \"string\",\n      \"keyType\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83660b9f-eba0-4e7b-b8a6-7546f87a9290",
+          "name": "Google Cloud IAM Create a service account key",
+          "request": {
+            "name": "Google Cloud IAM Create a service account key",
+            "description": {
+              "content": "Creates a new key for a service account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "serviceAccounts",
+                ":serviceAccountEmail",
+                "keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "serviceAccountEmail",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"privateKeyType\": \"<string>\",\n  \"keyAlgorithm\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "730b4e56-fe22-45a9-8dbc-a20683e94643",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "serviceAccounts",
+                    ":serviceAccountEmail",
+                    "keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceAccountEmail",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"privateKeyType\": \"<string>\",\n  \"keyAlgorithm\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"privateKeyType\": \"string\",\n  \"keyAlgorithm\": \"string\",\n  \"privateKeyData\": \"string\",\n  \"validAfterTime\": \"1953-11-08T16:32:10.112Z\",\n  \"validBeforeTime\": \"2020-12-27T21:46:06.384Z\",\n  \"keyOrigin\": \"string\",\n  \"keyType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e732300c-7902-43f2-b7f0-328312f329b0",
+      "name": "Service Accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6832515f-6946-43fc-8a70-86a21bbc6573",
+          "name": "Google Cloud IAM List service accounts",
+          "request": {
+            "name": "Google Cloud IAM List service accounts",
+            "description": {
+              "content": "Lists every service account in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "serviceAccounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ec571a0-6393-4f0e-baac-c90440bef22b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "serviceAccounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accounts\": [\n    {\n      \"name\": \"string\",\n      \"projectId\": \"string\",\n      \"uniqueId\": \"string\",\n      \"email\": \"mHUF5P0@lIlB.auf\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"disabled\": true,\n      \"etag\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"projectId\": \"string\",\n      \"uniqueId\": \"string\",\n      \"email\": \"tGD@tiXVPhM.fnu\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"disabled\": false,\n      \"etag\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9367b126-296f-43c0-9791-09c69620cdd4",
+          "name": "Google Cloud IAM Create a service account",
+          "request": {
+            "name": "Google Cloud IAM Create a service account",
+            "description": {
+              "content": "Creates a new service account in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "serviceAccounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountId\": \"<string>\",\n  \"serviceAccount\": {\n    \"name\": \"<string>\",\n    \"projectId\": \"<string>\",\n    \"uniqueId\": \"<string>\",\n    \"email\": \"<email>\",\n    \"displayName\": \"<string>\",\n    \"description\": \"<string>\",\n    \"disabled\": \"<boolean>\",\n    \"etag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ce087d02-d490-4f88-9c9e-6ebcce35f1e6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "serviceAccounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountId\": \"<string>\",\n  \"serviceAccount\": {\n    \"name\": \"string\",\n    \"projectId\": \"string\",\n    \"uniqueId\": \"string\",\n    \"email\": \"fP1ANhAAgs-qlC@OrYPfTguEXeFNiEEdbSMhM.nl\",\n    \"displayName\": \"string\",\n    \"description\": \"string\",\n    \"disabled\": true,\n    \"etag\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"projectId\": \"string\",\n  \"uniqueId\": \"string\",\n  \"email\": \"JnfqVxXZS@kUNofyLFLaBU.vuo\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"disabled\": true,\n  \"etag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4876abd-3188-493c-8794-13ccda5d1ded",
+          "name": "Google Cloud IAM Get a service account",
+          "request": {
+            "name": "Google Cloud IAM Get a service account",
+            "description": {
+              "content": "Retrieves a specific service account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "serviceAccounts",
+                ":serviceAccountEmail"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "serviceAccountEmail",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "17ea6df4-bc93-496d-a612-b2fe31f02e03",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "serviceAccounts",
+                    ":serviceAccountEmail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceAccountEmail",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"projectId\": \"string\",\n  \"uniqueId\": \"string\",\n  \"email\": \"JnfqVxXZS@kUNofyLFLaBU.vuo\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"disabled\": true,\n  \"etag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a896ca4-1e9f-48ac-87cf-532aeea75cad",
+          "name": "Google Cloud IAM Update a service account",
+          "request": {
+            "name": "Google Cloud IAM Update a service account",
+            "description": {
+              "content": "Updates a service account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "serviceAccounts",
+                ":serviceAccountEmail"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "serviceAccountEmail",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"uniqueId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"disabled\": \"<boolean>\",\n  \"etag\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "80ced3c5-9e91-463a-bb85-8da72b6dbea9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "serviceAccounts",
+                    ":serviceAccountEmail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceAccountEmail",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"uniqueId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"disabled\": \"<boolean>\",\n  \"etag\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"projectId\": \"string\",\n  \"uniqueId\": \"string\",\n  \"email\": \"JnfqVxXZS@kUNofyLFLaBU.vuo\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"disabled\": true,\n  \"etag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ce2ad0b-7390-431f-ae29-491438c95fde",
+          "name": "Google Cloud IAM Delete a service account",
+          "request": {
+            "name": "Google Cloud IAM Delete a service account",
+            "description": {
+              "content": "Deletes a service account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "serviceAccounts",
+                ":serviceAccountEmail"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "serviceAccountEmail",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ebac45e6-a3fe-4a47-8029-0d22790e7cc1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "serviceAccounts",
+                    ":serviceAccountEmail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceAccountEmail",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://iam.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "94c8db05-e3d9-480a-93dd-937586f666c5",
+    "name": "Google Cloud IAM API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cloud IAM API enables management of identity and access control policies, service accounts, roles, and permissions for Google Cloud resources.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
