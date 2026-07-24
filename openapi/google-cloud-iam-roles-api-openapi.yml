@@ -1,0 +1,142 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud IAM Permissions Roles API
+  description: The Cloud IAM API enables management of identity and access control policies, service accounts, roles, and permissions for Google Cloud resources.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/iam
+servers:
+- url: https://iam.googleapis.com/v1
+  description: Google Cloud IAM Production
+tags:
+- name: Roles
+paths:
+  /roles:
+    get:
+      operationId: listRoles
+      summary: Google Cloud IAM List roles
+      description: Lists predefined roles.
+      tags:
+      - Roles
+      parameters:
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roles:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Role'
+                  nextPageToken:
+                    type: string
+  /projects/{projectId}/roles:
+    get:
+      operationId: listProjectRoles
+      summary: Google Cloud IAM List project roles
+      description: Lists custom roles in a project.
+      tags:
+      - Roles
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roles:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Role'
+    post:
+      operationId: createProjectRole
+      summary: Google Cloud IAM Create a custom role
+      description: Creates a new custom role in a project.
+      tags:
+      - Roles
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                roleId:
+                  type: string
+                role:
+                  $ref: '#/components/schemas/Role'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+components:
+  schemas:
+    Role:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the role.
+        title:
+          type: string
+          description: Human-readable title of the role.
+        description:
+          type: string
+          description: Description of the role.
+        includedPermissions:
+          type: array
+          items:
+            type: string
+          description: Permissions included in the role.
+        stage:
+          type: string
+          enum:
+          - ALPHA
+          - BETA
+          - GA
+          - DEPRECATED
+          description: Launch stage of the role.
+        deleted:
+          type: boolean
+          description: Whether the role has been deleted.
+        etag:
+          type: string
+          description: Entity tag for optimistic concurrency control.
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/iam: Manage IAM resources
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud

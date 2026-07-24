@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud IAM Permissions API
+  description: The Cloud IAM API enables management of identity and access control policies, service accounts, roles, and permissions for Google Cloud resources.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/iam
+servers:
+- url: https://iam.googleapis.com/v1
+  description: Google Cloud IAM Production
+tags:
+- name: Permissions
+paths:
+  /permissions:queryTestablePermissions:
+    post:
+      operationId: queryTestablePermissions
+      summary: Google Cloud IAM Query testable permissions
+      description: Lists permissions that can be tested on a resource.
+      tags:
+      - Permissions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fullResourceName:
+                  type: string
+                pageSize:
+                  type: integer
+                pageToken:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  permissions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        stage:
+                          type: string
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/iam: Manage IAM resources
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
