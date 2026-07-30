@@ -4,7 +4,20 @@ description: >-
   Google Cloud Identity and Access Management (IAM) enables fine-grained access control and visibility for managing
   cloud resources. It provides the ability to create and manage service accounts, roles, and permissions to enforce
   least-privilege security policies across Google Cloud resources.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-iam.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-iam/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -18,31 +31,90 @@ tags:
   - Permissions
   - Security
 apis:
-  - name: Google Cloud IAM API
-    description: >-
-      The Cloud IAM API enables management of identity and access control policies, service accounts, roles, and
-      permissions for Google Cloud resources.
-    humanURL: https://cloud.google.com/iam
-    baseURL: https://iam.googleapis.com
-    tags:
-      - IAM
-      - Permissions
-      - Roles
-      - Service Accounts
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/iam/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/iam/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/iam/docs/quickstarts
-      - type: JSONSchema
-        url: json-schema/service-account.json
-      - type: JSONLDContext
-        url: json-ld/context.jsonld
+- aid: google-cloud-iam:google-cloud-iam-permissions-api
+  name: Google Cloud IAM Permissions API
+  description: The Permissions API from Google Cloud IAM — 1 operation(s) for permissions.
+  humanURL: https://cloud.google.com/iam
+  baseURL: https://iam.googleapis.com
+  tags:
+  - Permissions
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-iam-permissions-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/iam/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/iam/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/iam/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/service-account.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
+- aid: google-cloud-iam:google-cloud-iam-roles-api
+  name: Google Cloud IAM Roles API
+  description: The Roles API from Google Cloud IAM — 2 operation(s) for roles.
+  humanURL: https://cloud.google.com/iam
+  baseURL: https://iam.googleapis.com
+  tags:
+  - Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-iam-roles-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/iam/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/iam/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/iam/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/service-account.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
+- aid: google-cloud-iam:google-cloud-iam-service-account-keys-api
+  name: Google Cloud IAM Service Account Keys API
+  description: >-
+    The Service Account Keys API from Google Cloud IAM — 1 operation(s) for service account keys.
+  humanURL: https://cloud.google.com/iam
+  baseURL: https://iam.googleapis.com
+  tags:
+  - Service Account Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-iam-service-account-keys-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/iam/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/iam/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/iam/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/service-account.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
+- aid: google-cloud-iam:google-cloud-iam-service-accounts-api
+  name: Google Cloud IAM Service Accounts API
+  description: The Service Accounts API from Google Cloud IAM — 2 operation(s) for service accounts.
+  humanURL: https://cloud.google.com/iam
+  baseURL: https://iam.googleapis.com
+  tags:
+  - Service Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-iam-service-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/iam/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/iam/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/iam/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/service-account.json
+  - type: JSONLDContext
+    url: json-ld/context.jsonld
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-iam/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-iam-agentic-access.yml
   - type: VulnerabilityDisclosure
