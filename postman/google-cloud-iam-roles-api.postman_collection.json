@@ -1,0 +1,342 @@
+{
+  "info": {
+    "_postman_id": "d445c8d5-a0b6-471a-83f9-1b2f5790ca06",
+    "name": "Google Cloud IAM Permissions Roles API",
+    "description": "The Cloud IAM API enables management of identity and access control policies, service accounts, roles, and permissions for Google Cloud resources.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:40.000Z",
+    "updatedAt": "2026-07-28T01:47:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d445c8d5-a0b6-471a-83f9-1b2f5790ca06"
+  },
+  "item": [
+    {
+      "name": "roles",
+      "item": [
+        {
+          "name": "Google Cloud IAM List roles",
+          "id": "95945a8a-7622-49ee-b700-4c17d8a9e471",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/roles?pageSize=<integer>&pageToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "roles"
+              ],
+              "query": [
+                {
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Lists predefined roles."
+          },
+          "response": [
+            {
+              "id": "4e9f4bb6-1735-4a84-a27e-80b7fa0bde85",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/roles?pageSize=<integer>&pageToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "roles"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"roles\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"includedPermissions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"stage\": \"GA\",\n      \"deleted\": \"<boolean>\",\n      \"etag\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"includedPermissions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"stage\": \"DEPRECATED\",\n      \"deleted\": \"<boolean>\",\n      \"etag\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:47:41.000Z",
+              "updatedAt": "2026-07-28T01:47:41.000Z",
+              "uid": "35240-4e9f4bb6-1735-4a84-a27e-80b7fa0bde85"
+            }
+          ],
+          "createdAt": "2026-07-28T01:47:41.000Z",
+          "updatedAt": "2026-07-28T01:47:41.000Z",
+          "uid": "35240-95945a8a-7622-49ee-b700-4c17d8a9e471"
+        }
+      ],
+      "id": "b35054e5-d2e3-43f2-84df-099610103988",
+      "createdAt": "2026-07-28T01:47:41.000Z",
+      "updatedAt": "2026-07-28T01:47:41.000Z",
+      "uid": "35240-b35054e5-d2e3-43f2-84df-099610103988"
+    },
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "roles",
+              "item": [
+                {
+                  "name": "Google Cloud IAM List project roles",
+                  "id": "cdec6eef-55a9-42bc-9506-dd4585863a15",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:projectId/roles",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":projectId",
+                        "roles"
+                      ],
+                      "variable": [
+                        {
+                          "id": "b5fa737f-b790-498b-9a64-613f0b5e4a98",
+                          "key": "projectId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Lists custom roles in a project."
+                  },
+                  "response": [
+                    {
+                      "id": "7a7d6b89-addd-4007-b2ee-355247c55526",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/roles",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "roles"
+                          ],
+                          "variable": [
+                            {
+                              "key": "projectId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"roles\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"includedPermissions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"stage\": \"DEPRECATED\",\n      \"deleted\": \"<boolean>\",\n      \"etag\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"includedPermissions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"stage\": \"GA\",\n      \"deleted\": \"<boolean>\",\n      \"etag\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:47:41.000Z",
+                      "updatedAt": "2026-07-28T01:47:41.000Z",
+                      "uid": "35240-7a7d6b89-addd-4007-b2ee-355247c55526"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:47:41.000Z",
+                  "updatedAt": "2026-07-28T01:47:41.000Z",
+                  "uid": "35240-cdec6eef-55a9-42bc-9506-dd4585863a15"
+                },
+                {
+                  "name": "Google Cloud IAM Create a custom role",
+                  "id": "8d541e29-82a8-4b35-98d2-9ce2fc424dbc",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleId\": \"<string>\",\n  \"role\": {\n    \"name\": \"<string>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"includedPermissions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"stage\": \"DEPRECATED\",\n    \"deleted\": \"<boolean>\",\n    \"etag\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:projectId/roles",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":projectId",
+                        "roles"
+                      ],
+                      "variable": [
+                        {
+                          "id": "9b45d395-084f-49cb-8c49-03a0442fb5d9",
+                          "key": "projectId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Creates a new custom role in a project."
+                  },
+                  "response": [
+                    {
+                      "id": "b4a33126-968b-4399-b48a-6c8672f83356",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleId\": \"<string>\",\n  \"role\": {\n    \"name\": \"<string>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"includedPermissions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"stage\": \"DEPRECATED\",\n    \"deleted\": \"<boolean>\",\n    \"etag\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectId/roles",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectId",
+                            "roles"
+                          ],
+                          "variable": [
+                            {
+                              "key": "projectId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"includedPermissions\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"stage\": \"BETA\",\n  \"deleted\": \"<boolean>\",\n  \"etag\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:47:41.000Z",
+                      "updatedAt": "2026-07-28T01:47:41.000Z",
+                      "uid": "35240-b4a33126-968b-4399-b48a-6c8672f83356"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:47:41.000Z",
+                  "updatedAt": "2026-07-28T01:47:41.000Z",
+                  "uid": "35240-8d541e29-82a8-4b35-98d2-9ce2fc424dbc"
+                }
+              ],
+              "id": "a17786b7-0a0e-429c-ab81-d23a77a9e60a",
+              "createdAt": "2026-07-28T01:47:41.000Z",
+              "updatedAt": "2026-07-28T01:47:41.000Z",
+              "uid": "35240-a17786b7-0a0e-429c-ab81-d23a77a9e60a"
+            }
+          ],
+          "id": "04474b6c-836a-4d8a-aa61-a3e9e1f49309",
+          "createdAt": "2026-07-28T01:47:41.000Z",
+          "updatedAt": "2026-07-28T01:47:41.000Z",
+          "uid": "35240-04474b6c-836a-4d8a-aa61-a3e9e1f49309"
+        }
+      ],
+      "id": "1c2952ea-f0df-4622-9b3b-b2dbad6d985d",
+      "createdAt": "2026-07-28T01:47:41.000Z",
+      "updatedAt": "2026-07-28T01:47:41.000Z",
+      "uid": "35240-1c2952ea-f0df-4622-9b3b-b2dbad6d985d"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://iam.googleapis.com/v1"
+    }
+  ]
+}

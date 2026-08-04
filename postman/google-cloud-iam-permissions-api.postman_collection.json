@@ -1,0 +1,125 @@
+{
+  "info": {
+    "_postman_id": "40d928b9-a15f-4afd-a48c-afdd0ade6483",
+    "name": "Google Cloud IAM Permissions API",
+    "description": "The Cloud IAM API enables management of identity and access control policies, service accounts, roles, and permissions for Google Cloud resources.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:39.000Z",
+    "updatedAt": "2026-07-28T01:47:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-40d928b9-a15f-4afd-a48c-afdd0ade6483"
+  },
+  "item": [
+    {
+      "name": "permissions:queryTestablePermissions",
+      "item": [
+        {
+          "name": "Google Cloud IAM Query testable permissions",
+          "id": "792795c7-f302-4560-8429-ac6727f247ee",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullResourceName\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/permissions:queryTestablePermissions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "permissions:queryTestablePermissions"
+              ]
+            },
+            "description": "Lists permissions that can be tested on a resource."
+          },
+          "response": [
+            {
+              "id": "8e17bbc7-44e6-4e16-877b-298f379fbd21",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fullResourceName\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/permissions:queryTestablePermissions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "permissions:queryTestablePermissions"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"permissions\": [\n    {\n      \"name\": \"<string>\",\n      \"stage\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"stage\": \"<string>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T01:47:40.000Z",
+              "updatedAt": "2026-07-28T01:47:40.000Z",
+              "uid": "35240-8e17bbc7-44e6-4e16-877b-298f379fbd21"
+            }
+          ],
+          "createdAt": "2026-07-28T01:47:40.000Z",
+          "updatedAt": "2026-07-28T01:47:40.000Z",
+          "uid": "35240-792795c7-f302-4560-8429-ac6727f247ee"
+        }
+      ],
+      "id": "9b70e1e6-21b8-4f18-9139-e7a64da2ac40",
+      "createdAt": "2026-07-28T01:47:40.000Z",
+      "updatedAt": "2026-07-28T01:47:40.000Z",
+      "uid": "35240-9b70e1e6-21b8-4f18-9139-e7a64da2ac40"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://iam.googleapis.com/v1"
+    }
+  ]
+}
