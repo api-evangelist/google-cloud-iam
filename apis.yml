@@ -4,6 +4,18 @@ description: >-
   Google Cloud Identity and Access Management (IAM) enables fine-grained access control and visibility for managing
   cloud resources. It provides the ability to create and manage service accounts, roles, and permissions to enforce
   least-privilege security policies across Google Cloud resources.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
