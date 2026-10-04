@@ -1,0 +1,52 @@
+slug: google-cloud-iam
+provider: Google Cloud IAM
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Roles
+  spec_file: google-cloud-iam-roles-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.88
+  evidence: '"List roles", "Create a custom role", schema "Role"'
+  reason: Definition and management of IAM roles that grant access to cloud resources is squarely Identity
+    & Access Management.
+- tag: Service Accounts
+  spec_file: google-cloud-iam-service-accounts-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.88
+  evidence: '"Create a service account", "Delete a service account", schema "ServiceAccount"'
+  reason: Full lifecycle management of non-human identities used to access cloud resources — Identity
+    & Access Management.
+- tag: Service Account Keys
+  spec_file: google-cloud-iam-service-account-keys-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.82
+  evidence: '"List service account keys", "Create a service account key", schema "ServiceAccountKey"'
+  reason: Issuance and listing of machine identity credentials is credential lifecycle within Identity
+    & Access Management.
+- tag: Permissions
+  spec_file: google-cloud-iam-permissions-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: '"Query testable permissions" — "enables management of identity and access control policies,
+    service accounts, roles, and permissions"'
+  reason: Permission enumeration within an identity and access management service supports access-control
+    policy design; thin surface (one operation) so confidence is moderate.
