@@ -132,6 +132,12 @@ apis:
   - type: JSONLDContext
     url: json-ld/context.jsonld
 common:
+  - type: Plans
+    url: plans/google-cloud-iam-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/google-cloud-iam-rate-limits.yml
+  - type: FinOps
+    url: finops/google-cloud-iam-finops.yml
   - type: CapabilityMap
     url: capabilities/google-cloud-iam-capability-edges.yml
     name: Google Cloud IAM Business Capability Map
