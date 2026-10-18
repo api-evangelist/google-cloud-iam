@@ -36,9 +36,8 @@ modified: '2026-05-19'
 specificationVersion: '0.23'
 type: Index
 tags:
-  - Access Management
-  - Google Cloud
   - Identity and Access Management
+  - Google Cloud
   - Identity
   - Permissions
   - Security
