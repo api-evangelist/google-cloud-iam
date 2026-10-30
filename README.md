@@ -1,4 +1,4 @@
-# Google Cloud IAM (google-cloud-iam)
+# Google Cloud IAM
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,69 +66,158 @@
 
 Google Cloud Identity and Access Management (IAM) enables fine-grained access control and visibility for managing cloud resources. It provides the ability to create and manage service accounts, roles, and permissions to enforce least-privilege security policies across Google Cloud resources.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-iam/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-iam/refs/heads/main/apis.yml)
+**Areas:** Identity and Access Management · Google Cloud · Identity · Permissions · Security
 
-## Scope
+## Google Cloud IAM on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud IAM is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-iam/](https://apis.io/providers/google-cloud-iam/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Access Management
-- Google Cloud
-- IAM
-- Identity
-- Permissions
-- Security
+- [Google Cloud IAM Permissions API](https://apis.io/apis/google-cloud-iam/google-cloud-iam-permissions-api/) — The Permissions API from Google Cloud IAM — 1 operation(s) for permissions.
+- [Google Cloud IAM Roles API](https://apis.io/apis/google-cloud-iam/google-cloud-iam-roles-api/) — The Roles API from Google Cloud IAM — 2 operation(s) for roles.
+- [Google Cloud IAM Service Account Keys API](https://apis.io/apis/google-cloud-iam/google-cloud-iam-service-account-keys-api/) — The Service Account Keys API from Google Cloud IAM — 1 operation(s) for service account keys.
+- [Google Cloud IAM Service Accounts API](https://apis.io/apis/google-cloud-iam/google-cloud-iam-service-accounts-api/) — The Service Accounts API from Google Cloud IAM — 2 operation(s) for service accounts.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Cloud IAM API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Cloud IAM API enables management of identity and access control policies, service accounts, roles, and permissions for Google Cloud resources.
+- [Google Cloud Iam Agentic Access](https://apis.io/agentic-access/google-cloud-iam/google-cloud-iam-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/iam](https://cloud.google.com/iam)
-- **Base URL:** `https://iam.googleapis.com`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- IAM
-- Permissions
-- Roles
-- Service Accounts
+- [ServiceAccount](https://apis.io/schemas/google-cloud-iam/service-account/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/iam/docs/reference/rest)
-- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/iam/docs/authentication)
-- [Getting Started](https://cloud.google.com/iam/docs/quickstarts)
-- [JSON Schema](json-schema/service-account.json) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](json-ld/context.jsonld)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [context Context](https://apis.io/jsonld/google-cloud-iam/context/)
 
-- [GitHub Organization](https://github.com/googleapis)
-- [Portal](https://cloud.google.com/iam)
-- [Getting Started](https://cloud.google.com/iam/docs/quickstarts)
+#### Collections (9)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud IAM Permissions API](https://apis.io/collections/google-cloud-iam/open-google-cloud-iam-permissions-api/)
+- [Google Cloud IAM Permissions Roles API](https://apis.io/collections/google-cloud-iam/open-google-cloud-iam-roles-api/)
+- [Google Cloud IAM Permissions Service Account Keys API](https://apis.io/collections/google-cloud-iam/open-google-cloud-iam-service-account-keys-api/)
+- [Google Cloud IAM Permissions Service Accounts API](https://apis.io/collections/google-cloud-iam/open-google-cloud-iam-service-accounts-api/)
+- [Google Cloud IAM API](https://apis.io/collections/google-cloud-iam/open-openapi/)
+- [Google Cloud IAM Permissions API](https://apis.io/collections/google-cloud-iam/postman-google-cloud-iam-permissions-api/)
+- [Google Cloud IAM Permissions Roles API](https://apis.io/collections/google-cloud-iam/postman-google-cloud-iam-roles-api/)
+- [Google Cloud IAM Permissions Service Account Keys API](https://apis.io/collections/google-cloud-iam/postman-google-cloud-iam-service-account-keys-api/)
+- [Google Cloud IAM Permissions Service Accounts API](https://apis.io/collections/google-cloud-iam/postman-google-cloud-iam-service-accounts-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud IAM — jsonschema rules](https://apis.io/rules/google-cloud-iam/google-cloud-iam-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Iam Authentication](https://apis.io/security/google-cloud-iam/google-cloud-iam-authentication/)
+- [Google Cloud Iam Domain Security](https://apis.io/security/google-cloud-iam/google-cloud-iam-domain-security/)
+- [Google Cloud Iam Vulnerability Disclosure](https://apis.io/security/google-cloud-iam/google-cloud-iam-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Iam Scopes](https://apis.io/scopes/google-cloud-iam/google-cloud-iam-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Iam Plans Pricing](https://apis.io/plans/google-cloud-iam/google-cloud-iam-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Iam Rate Limits](https://apis.io/rate-limits/google-cloud-iam/google-cloud-iam-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Iam Finops](https://apis.io/finops/google-cloud-iam/google-cloud-iam-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/iam/docs)
-- [Authentication](https://cloud.google.com/iam/docs/authentication)
+- [Getting started](https://cloud.google.com/iam/docs/quickstarts)
 - [Pricing](https://cloud.google.com/iam/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/iam/docs/support)
-- [J S O N L D Context](json-ld/context.jsonld)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/googleapis)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 45.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 54.2 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 44.0 |
+| Access clarity | 39.5 |
+
+**Agent readiness 24.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-iam/](https://apis.io/providers/google-cloud-iam/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud IAM: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-iam/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
